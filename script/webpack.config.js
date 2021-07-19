@@ -2,18 +2,20 @@
  * @Author: Cookie
  * @Date: 2021-07-18 15:50:41
  * @LastEditors: Cookie
- * @LastEditTime: 2021-07-18 18:18:23
+ * @LastEditTime: 2021-07-19 10:41:46
  * @Description:
  */
 
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const { ProgressPlugin } = require('webpack')
 
 module.exports = {
   mode: "development",
   entry: "./src/index.tsx",
   devServer: {
+    stats: 'errors-only',
     contentBase: path.resolve(__dirname, "dist"),
     hot: true,
     historyApiFallback: true,
@@ -59,6 +61,7 @@ module.exports = {
     ],
   },
   plugins: [
+    new ProgressPlugin(),
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       template: 'tpl/index.html'
