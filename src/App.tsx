@@ -1,21 +1,18 @@
 /*
  * @Author: Cookie
  * @Date: 2021-07-18 15:58:01
- * @LastEditors: Cookie
- * @LastEditTime: 2021-07-18 18:05:28
+ * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2022-09-05 15:15:20
  * @Description:
  */
 
-import React, { Component } from "react";
+import React, { Component } from 'react';
+import routes from '@/router';
+import { useRoutes } from "react-router-dom";
 
-class App extends Component {
-  render() {
-    return (
-      <div className='title'>
-        <h1>Hello, World! </h1>
-      </div>
-    );
-  }
+function App() {
+  const element = useRoutes(routes)
+  return element;
 }
 
 export default App;

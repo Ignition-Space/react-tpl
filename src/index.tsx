@@ -1,30 +1,22 @@
 /*
  * @Author: Cookie
  * @Date: 2021-07-18 15:49:12
- * @LastEditors: Cookie
- * @LastEditTime: 2021-07-18 16:53:32
+ * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2022-09-05 15:14:44
  * @Description:
  */
 
-import React from 'react'
-import ReactDOM from 'react-dom'
-import { HashRouter, Route, Switch } from 'react-router-dom'
-import routerConfig from './router/index'
-import './base.less'
+import { createRoot } from 'react-dom/client';
+import { BrowserRouter } from 'react-router-dom';
+import App from './App';
+import './global.less'
 
-ReactDOM.render(
-  <React.StrictMode>
-    <HashRouter>
-      <Switch>
-        {
-          routerConfig.routes.map((route) => {
-            return (
-              <Route key={route.path} {...route} />
-            )
-          })
-        }
-      </Switch>
-    </HashRouter>
-  </React.StrictMode>,
-  document.getElementById('root')
-)
+const container = document.getElementById('root') as HTMLElement;
+
+const root = createRoot(container);
+
+root.render(
+  <BrowserRouter>
+    <App></App>
+  </BrowserRouter>,
+);
