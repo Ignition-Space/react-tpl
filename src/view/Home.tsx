@@ -4,7 +4,7 @@ class Home extends Component {
   render() {
     return (
       <div className="title">
-        <h1>搭建工程</h1>
+        <h1>test23生生世世实上3</h1>
       </div>
     );
   }
